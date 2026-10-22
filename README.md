@@ -1,8 +1,8 @@
-﻿\# Fintech Payment Risk \& Fraud Investigation
+﻿# Fintech Payment Risk & Fraud Investigation
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
@@ -14,19 +14,19 @@ Four investigation cases were completed using PostgreSQL. Each case documents ob
 
 
 
-\*\*Project type:\*\* Synthetic payment-risk investigation  
+**Project type:** Synthetic payment-risk investigation  
 
-\*\*Primary tool:\*\* SQL  
+**Primary tool:** SQL  
 
-\*\*Database:\*\* PostgreSQL  
+**Database:** PostgreSQL  
 
-\*\*Dataset:\*\* 3,000 payment attempts across eight merchants  
+**Dataset:** 3,000 payment attempts across eight merchants  
 
-\*\*Cases completed:\*\* 4
+**Cases completed:** 4
 
 
 
-\## Dataset
+## Dataset
 
 
 
@@ -54,11 +54,11 @@ The analysis uses SQL filtering, aggregation, joins, time-window analysis, and g
 
 
 
-\## Investigation Cases
+## Investigation Cases
 
 
 
-\### Case 1 â€” Potential Card Testing
+### Case 1 - Potential Card Testing
 
 
 
@@ -66,23 +66,23 @@ Investigated a burst of low-value authorization attempts involving payment instr
 
 
 
-\- 45 attempts occurred between approximately 10:00 and 10:31 on August 12, 2026.
+- 45 attempts occurred between approximately 10:00 and 10:31 on August 12, 2026.
 
-\- 37 attempts were declined and 8 were approved.
+- 37 attempts were declined and 8 were approved.
 
-\- Attempt amounts ranged from $0.50 to $4.95.
+- Attempt amounts ranged from $0.50 to $4.95.
 
-\- The activity shared IP address `203.0.113.77` and device identifier `DEVTEST01`.
+- The activity shared IP address `203.0.113.77` and device identifier `DEVTEST01`.
 
-\- Related activity involved a second customer and payment instrument using the same technical identifiers.
-
-
-
-\*\*Disposition:\*\* Escalate for manual review. Validate instrument ownership, account history, and related activity before taking action. The observed pattern is consistent with potential card testing but does not confirm fraud.
+- Related activity involved a second customer and payment instrument using the same technical identifiers.
 
 
 
-\### Case 2 â€” Payment Declines and Velocity
+**Disposition:** Escalate for manual review. Validate instrument ownership, account history, and related activity before taking action. The observed pattern is consistent with potential card testing but does not confirm fraud.
+
+
+
+### Case 2 - Payment Declines and Velocity
 
 
 
@@ -102,7 +102,7 @@ Analyzed payment outcomes, decline reasons, and payment instruments with concent
 
 | Reversed | 59 |
 
-| \*\*Total\*\* | \*\*3,000\*\* |
+| **Total** | **3,000** |
 
 
 
@@ -114,27 +114,27 @@ Payment instrument `PI0001` had 38 declined attempts in the instrument-level ana
 
 
 
-\*\*Disposition:\*\* Review repeated attempts, timing, outcomes, and instrument history. Distinguish potential card testing from technical retries and legitimate payment failures.
+**Disposition:** Review repeated attempts, timing, outcomes, and instrument history. Distinguish potential card testing from technical retries and legitimate payment failures.
 
 
 
-\### Case 3 â€” Chargeback Exposure
+### Case 3 - Chargeback Exposure
 
 
 
-Analyzed 95 chargebacks totaling \*\*$8,016.73\*\*.
+Analyzed 95 chargebacks totaling **$8,016.73**.
 
 
 
-\- Average disputed amount: approximately $84.39.
+- Average disputed amount: approximately $84.39.
 
-\- Minimum disputed amount: $4.09.
+- Minimum disputed amount: $4.09.
 
-\- Maximum disputed amount: $450.55.
+- Maximum disputed amount: $450.55.
 
-\- All 95 chargebacks matched a payment attempt by payment ID.
+- All 95 chargebacks matched a payment attempt by payment ID.
 
-\- No discrepancy was found between the disputed amount and original payment amount for the matched records.
+- No discrepancy was found between the disputed amount and original payment amount for the matched records.
 
 
 
@@ -142,11 +142,11 @@ The analysis identified repeat-dispute customers and grouped chargebacks by stat
 
 
 
-\*\*Disposition:\*\* Prioritize repeat-dispute customers, review larger exposures, and monitor cases that remain under review or have not reached a final outcome.
+**Disposition:** Prioritize repeat-dispute customers, review larger exposures, and monitor cases that remain under review or have not reached a final outcome.
 
 
 
-\### Case 4 â€” Merchant Risk Comparison
+### Case 4 - Merchant Risk Comparison
 
 
 
@@ -158,11 +158,11 @@ Key findings:
 
 
 
-\- \*\*MER006 â€” FlashVoucher:\*\* 426 attempts, 74.88% approval rate, 18 chargebacks, and $1,987.50 in disputed amounts.
+- **MER006 - FlashVoucher:** 426 attempts, 74.88% approval rate, 18 chargebacks, and $1,987.50 in disputed amounts.
 
-\- \*\*MER008 â€” Urban Market:\*\* 14 chargebacks and a 42.86% lost-case rate.
+- **MER008 - Urban Market:** 14 chargebacks and a 42.86% lost-case rate.
 
-\- \*\*MER007 â€” StreamBox Media:\*\* 12 chargebacks and a 41.67% lost-case rate.
+- **MER007 - StreamBox Media:** 12 chargebacks and a 41.67% lost-case rate.
 
 
 
@@ -170,87 +170,90 @@ MER006 had the highest attempt volume, the largest total disputed amount, and th
 
 
 
-\*\*Disposition:\*\* Prioritize MER006 for further investigation and review MER008 and MER007. Validate transaction patterns, customer activity, and related identifiers before recommending merchant-level action.
+**Disposition:** Prioritize MER006 for further investigation and review MER008 and MER007. Validate transaction patterns, customer activity, and related identifiers before recommending merchant-level action.
 
 
 
-\## Cross-Case Recommendations
+## Cross-Case Recommendations
 
 
 
-1\. Investigate transaction frequency, amount, timing, payment status, device, IP, and customer history together.
+1. Investigate transaction frequency, amount, timing, payment status, device, IP, and customer history together.
 
-2\. Validate whether shared IP addresses or devices indicate suspicious coordination or legitimate shared environments.
+2. Validate whether shared IP addresses or devices indicate suspicious coordination or legitimate shared environments.
 
-3\. Separate rapid, low-value authorization bursts from ordinary retries and technical failures.
+3. Separate rapid, low-value authorization bursts from ordinary retries and technical failures.
 
-4\. Prioritize repeat chargebacks and higher-value disputed cases while tracking final outcomes.
+4. Prioritize repeat chargebacks and higher-value disputed cases while tracking final outcomes.
 
-5\. Compare merchant risk indicators with transaction volume and sample size.
+5. Compare merchant risk indicators with transaction volume and sample size.
 
-6\. Document observed facts, hypotheses, limitations, and the reasons for each disposition.
-
-
-
-\## Tools and SQL Skills
+6. Document observed facts, hypotheses, limitations, and the reasons for each disposition.
 
 
 
-\- PostgreSQL and pgAdmin 4
-
-\- Filtering and conditional logic
-
-\- Aggregation and grouped comparisons
-
-\- Joins across related payment tables
-
-\- Time-window analysis
-
-\- Payment decline and authorization analysis
-
-\- Chargeback reconciliation and exposure analysis
-
-\- Evidence-based investigation documentation
+## Tools and SQL Skills
 
 
 
-\## Limitations
+- PostgreSQL and pgAdmin 4
+
+- Filtering and conditional logic
+
+- Aggregation and grouped comparisons
+
+- Joins across related payment tables
+
+- Time-window analysis
+
+- Payment decline and authorization analysis
+
+- Chargeback reconciliation and exposure analysis
+
+- Evidence-based investigation documentation
 
 
 
-\- All data is synthetic and does not represent real company or Stripe activity.
-
-\- The available fields do not prove user intent or establish fraud independently.
-
-\- Payment timestamps were insufficient for precise matching with IP activity in the relevant investigation.
-
-\- Shared IP addresses and device identifiers may have legitimate explanations.
-
-\- Merchant lost-case rates are based on small counts and should not be interpreted as stable long-term risk rates.
-
-\- Findings are exploratory and require additional validation before production decisions.
+## Limitations
 
 
 
-\## Repository Structure
+- All data is synthetic and does not represent real company or Stripe activity.
+
+- The available fields do not prove user intent or establish fraud independently.
+
+- Payment timestamps were insufficient for precise matching with IP activity in the relevant investigation.
+
+- Shared IP addresses and device identifiers may have legitimate explanations.
+
+- Merchant lost-case rates are based on small counts and should not be interpreted as stable long-term risk rates.
+
+- Findings are exploratory and require additional validation before production decisions.
 
 
 
-\- `data/` â€” Synthetic source datasets.
-
-\- `sql/case\_1/` through `sql/case\_4/` â€” SQL investigation queries.
-
-\- `results/case\_1/` through `results/case\_4/` â€” Saved query results.
-
-\- `reports/` â€” Case reports and the final portfolio report.
+## Repository Structure
 
 
 
-## Interview Summary
+- `data/` - Synthetic source datasets.
+
+- `sql/case_1/` through `sql/case_4/` - SQL investigation queries.
+
+- `results/case_1/` through `results/case_4/` - Saved query results.
+
+- `reports/` - Case reports and the final portfolio report.
+
+
+
+## Project Summary
 
 
 
 I completed a synthetic fintech payment-risk project using SQL. I investigated potential card testing, payment decline and retry patterns, chargeback exposure, and merchant-level risk. I used filtering, aggregation, joins, time-window analysis, and grouped comparisons to identify suspicious patterns and quantify exposure. I documented evidence, limitations, and recommended next steps, treating risk indicators as investigation leads rather than automatically classifying them as confirmed fraud.
+
+
+
 
 
 

@@ -1,0 +1,8 @@
+"payment_status","decline_reason","number_of_attempts_each_status","number_of_each_recorded_decline_reason"
+"approved",NULL,2438,2438
+"declined","timeout",110,110
+"declined","do_not_honor",105,105
+"declined","suspected_fraud",100,100
+"pending",NULL,99,99
+"declined","insufficient_funds",89,89
+"reversed",NULL,59,59

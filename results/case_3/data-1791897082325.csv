@@ -1,0 +1,6 @@
+"chargeback_id","payment_id","disputed_amount","reason","case_status"
+"CB00077","PAY002954",450.55,"duplicate","lost"
+"CB00016","PAY000080",409.30,"fraudulent","under_review"
+"CB00026","PAY000760",301.53,"fraudulent","won"
+"CB00046","PAY001193",267.86,"subscription_cancelled","won"
+"CB00017","PAY002250",244.79,"duplicate","lost"

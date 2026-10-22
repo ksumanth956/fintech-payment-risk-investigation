@@ -1,0 +1,5 @@
+"customer_id","payment_status","number_of_attempts"
+"CUS0155","approved",15
+"CUS0155","declined",10
+"CUS0173","approved",8
+"CUS0173","declined",37

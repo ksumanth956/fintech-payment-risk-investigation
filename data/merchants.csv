@@ -1,0 +1,9 @@
+merchant_id,merchant_name,merchant_category,country,baseline_risk_tier
+MER001,Northstar Digital Goods,Digital goods,US,Low
+MER002,Metro Fashion,Retail,US,Low
+MER003,QuickTopup,Digital services,GB,Medium
+MER004,CloudPlay Subscriptions,Subscriptions,CA,Medium
+MER005,Gadget Harbor,Electronics,US,Medium
+MER006,FlashVoucher,Gift cards,GB,High
+MER007,StreamBox Media,Digital goods,AU,Medium
+MER008,Urban Market,Retail,IN,Low

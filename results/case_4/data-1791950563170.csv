@@ -1,0 +1,9 @@
+"merchant_id","merchant_name","total_chargebacks","total_disputed_amount","lost_chargebacks"
+"MER006","FlashVoucher",18,1987.50,6
+"MER008","Urban Market",14,947.79,6
+"MER002","Metro Fashion",13,723.39,5
+"MER004","CloudPlay Subscriptions",13,824.16,3
+"MER007","StreamBox Media",12,1278.25,5
+"MER001","Northstar Digital Goods",11,947.42,3
+"MER005","Gadget Harbor",9,736.64,2
+"MER003","QuickTopup",5,571.58,1

@@ -1,0 +1,5 @@
+"reason","number_of_chargebacks","total_disputed_amount","average_disputed_amount"
+"duplicate",33,2880.80,87.2969696969696970
+"fraudulent",28,2335.29,83.4032142857142857
+"product_not_received",17,1418.33,83.4311764705882353
+"subscription_cancelled",17,1382.31,81.3123529411764706

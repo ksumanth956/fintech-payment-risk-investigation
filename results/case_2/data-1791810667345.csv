@@ -1,0 +1,6 @@
+"decline_reason","number_of_attemtps_each_reason"
+NULL,2596
+"timeout",110
+"do_not_honor",105
+"suspected_fraud",100
+"insufficient_funds",89

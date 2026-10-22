@@ -1,0 +1,5 @@
+"case_status","number_of_chargebacks","total_disputed_amount","total_resolved_amount"
+"lost",31,2823.62,2687.36
+"received",23,1546.93,1488.85
+"won",22,2087.23,2035.07
+"under_review",19,1558.95,1445.89
